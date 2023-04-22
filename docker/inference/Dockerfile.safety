@@ -20,6 +20,7 @@ COPY ./${APP_RELATIVE_PATH}/requirements.txt requirements.txt
 
 RUN --mount=type=cache,target=/var/cache/pip \
     pip install                  \
+      --default-timeout=100      \
       --cache-dir=/var/cache/pip \
       --target=lib               \
       -r requirements.txt
